@@ -23,4 +23,6 @@ export default {
   DARK_FOUR: '#282828',
   DARK_FIVE: '#B3B3B3',
   BACKGROUND_1: '#f2f2f2',
+  BLACK: '#000000',
+  WHITE: '#ffffff',
 };
