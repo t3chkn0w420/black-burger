@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { Drawer1, Drawer2, Drawer3 } from '../screens/Drawer';
 import HomeScreen from '../screens/HomeScreen';
-import CustomSidebarMenu from '../components/CustomSidebarMenu';
+import CustomSidebarMenu from '../componentss/CustomSidebarMenu';
 
 const Drawer = createDrawerNavigator();
 

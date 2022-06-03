@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { Drawer1, Drawer2, Drawer3 } from '../screens/Drawer';
 import HomeScreen from '../screens/HomeScreen';
-import CustomSidebarMenu from '../components/CustomSidebarMenu';
+import CustomSidebarMenu from '../componentss/CustomSidebarMenu';
 import BottomTab from './BottomTab';
 
 const Drawer = createDrawerNavigator();
@@ -24,7 +24,7 @@ export default function App() {
               headerTitle: (props) => (
                 <Image
                     resizeMode='center'
-                    style={{width: 180, height: 60, marginLeft: 200, resizeMode: 'contain'}}
+                    style={{width: 180, height: 60, marginLeft: 280, resizeMode: 'contain'}}
                     source={require('../assets/images/logo.png')}
                 />
             ),
