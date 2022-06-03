@@ -1,55 +1,49 @@
-// Custom Navigation Drawer / Sidebar with Image and Icon in Menu Options
-// https://aboutreact.com/custom-navigation-drawer-sidebar-with-image-and-icon-in-menu-options/
- 
-import * as React from 'react';
-import {Button, View, Text, SafeAreaView} from 'react-native';
- 
+import React from 'react';
+import {View, Text, StyleSheet, Pressable} from 'react-native';
+
 const Drawer1 = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, padding: 16}}>
-        <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text
-            style={{
-              fontSize: 25,
-              textAlign: 'center',
-              marginBottom: 16,
-            }}>
-            This is the First Page under First Page Option
-          </Text>
-          <Button
-            onPress={() => navigation.navigate('SecondPage')}
-            title="Go to Second Page"
-          />
-          <Button
-            onPress={() => navigation.navigate('ThirdPage')}
-            title="Go to Third Page"
-          />
-        </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          Custom React Navigate Drawer
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          www.aboutreact.com
-        </Text>
-      </View>
-    </SafeAreaView>
+    <View style={styles.screenContainer}>
+      <Text style={styles.title}>Detail Screen</Text>
+      <Pressable
+        style={styles.buttonStyle}
+        onPress={() => navigation.navigate('Home')}>
+        <Text style={styles.buttonTextStyle}>Go To Home Screen</Text>
+      </Pressable>
+    </View>
   );
 };
- 
+
+const styles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+  title: {
+    fontSize: 32,
+  },
+  buttonStyle: {
+    height: 54,
+    width: '80%',
+    marginTop: 32,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#2EE59D',
+    shadowRadius: 5,
+    shadowOpacity: 0.7,
+    shadowColor: 'rgba(46, 229, 157, 0.5)',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+  },
+  buttonTextStyle: {
+    color: '#fdfdfd',
+    fontWeight: '700',
+  },
+});
+
 export default Drawer1;

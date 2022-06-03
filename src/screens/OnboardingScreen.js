@@ -18,19 +18,19 @@ const COLORS = {primary: '#f2f2f2 ', dark: '#000', white: '#fff'};
 const slides = [
   {
     id: '1',
-    image: require('../assets/images/fresh.png'),
+    image: require('../asset/images/fresh.png'),
     title: '100% Always Hot and Fresh',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: '2',
-    image: require('../assets/images/favorite.png'),
+    image: require('../asset/images/favorite.png'),
     title: 'Black Burger Favorites',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: '3',
-    image: require('../assets/images/delivery.png'),
+    image: require('../asset/images/delivery.png'),
     title: 'Express Delivery',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
@@ -126,7 +126,7 @@ const OnboardingScreen = ({navigation}) => {
                 style={[
                   styles.btn,
                   {
-                    borderColor: COLORS.white,
+                    // borderColor: COLORS.white,
                     borderWidth: 1,
                     // backgroundColor: 'transparent',
                   },
@@ -137,7 +137,8 @@ const OnboardingScreen = ({navigation}) => {
                     fontWeight: 'bold',
                     fontSize: 15,
                     // backgroundColor: COLORS.dark,
-                    color: COLORS.white,
+                    // color: COLORS.white,
+                    color: '#fff',
                   }}>
                   SKIP
                 </Text>
@@ -165,7 +166,7 @@ const OnboardingScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#f2f2f2'}}>
       <StatusBar backgroundColor={COLORS.dark} />
       <FlatList
         ref={ref}

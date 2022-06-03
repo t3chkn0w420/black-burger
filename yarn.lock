@@ -2512,14 +2512,7 @@ curved-bottom-navigation-bar@^2.0.5:
   resolved "https://registry.npmjs.org/d3-path/-/d3-path-3.0.1.tgz"
   integrity sha512-gq6gZom9AFZby0YLduxT1qmrp4xpBA1YZr19OI717WIdKE2OM5ETq5qrHLb301IgxhLwcuxvGZVLeeWc/k1I6w==
 
-d3-shape@*:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/d3-shape/-/d3-shape-3.1.0.tgz"
-  integrity sha512-tGDh1Muf8kWjEDT/LswZJ8WF85yDZLvVJpYU9Nq+8+yW1Z5enxrmXOhTArlkaElU+CTn0OTVNli+/i+HP45QEQ==
-  dependencies:
-    d3-path "1 - 3"
-
-d3-shape@^3.1.0:
+d3-shape@*, d3-shape@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-3.1.0.tgz#c8a495652d83ea6f524e482fca57aa3f8bc32556"
   integrity sha512-tGDh1Muf8kWjEDT/LswZJ8WF85yDZLvVJpYU9Nq+8+yW1Z5enxrmXOhTArlkaElU+CTn0OTVNli+/i+HP45QEQ==
@@ -5789,6 +5782,13 @@ react-is@^16.13.0, react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-animatable@^1.3.2:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
+  integrity sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-codegen@^0.0.17:
   version "0.0.17"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.17.tgz"
@@ -5805,11 +5805,6 @@ react-native-curved-bottom-bar@^1.7.9:
   integrity sha512-NUNcqW1AA0uIjFgaEE9Coa7VmGRF3UgCvch0Kp3Fc0c6TZucIHQcENPVzfYuxUKAY+gyWkWxexcQ+aBB0h9LKw==
   dependencies:
     d3-shape "*"
-
-react-native-curved-bottom-tabbar@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/react-native-curved-bottom-tabbar/-/react-native-curved-bottom-tabbar-0.0.5.tgz#9c26468b0d63e5f690e69e709b997e2454a8b841"
-  integrity sha512-EaVHQ4b5LW9IFYXGh1Ccoka7F2iP7IM4cxpGT1Avy+1WBKHgooPBtYv+866KoMoYHo73ooZdyX5977Ihh8FDOQ==
 
 react-native-gesture-handler@^2.4.2:
   version "2.4.2"
@@ -5878,6 +5873,14 @@ react-native-screens@^3.13.1:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-search-header@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/react-native-search-header/-/react-native-search-header-0.3.5.tgz#7720beeef391df9073ddc7d6c385f75439b450b5"
+  integrity sha512-gh4Z10aVVmANsz4UOMTLoZsHo7C6jcMLlP72acuaNr9oGnwpsNUbTqybvddlOWFhv93ywv1eA5nGhcwP+rSr/A==
+  dependencies:
+    react-native-animatable "^1.3.2"
+    semver "^6.3.0"
 
 react-native-svg@^12.3.0:
   version "12.3.0"

@@ -40,7 +40,7 @@ const Splash = ({ navigation }) => {
         <FadeInView style={styles.splash}>
                 <StatusBar barstyle="light-content" hidden={false} backgroundColor="#000" />
                 
-            <Image source={require('../assets/images/logo.png')}
+            <Image source={require('../asset/images/logo.png')}
                 style={{
                     width: '80%',
                     height: '40%',
