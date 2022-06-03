@@ -1,20 +1,27 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
+import {SafeAreaView, TouchableOpacity, StyleSheet, View, Text, Image} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import Colors from '../constants/Colors';
-import {SecondaryButton} from '../constants/';
+import {SecondaryButton} from '../components/Button';
 
-const DetailsScreen = ({navigation, route}) => {
+const DetailsScreen = ({ navigation, route }) => {
   const item = route.params;
 
   return (
-    <SafeAreaView style={{backgroundColor: '#fff'}}>
+    <SafeAreaView style={{backgroundColor: Colors.white}}>
       <View style={style.header}>
-        <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
-        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Details</Text>
+          <TouchableOpacity
+                onPress={() => {navigation.goBack()}}
+              >
+                  <Image source={require('../asset/icons/back.png')} style={{
+                    width: 30,
+                    height: 30,
+                    tintColor: 'black'
+              }}/>
+          </TouchableOpacity>
+          
       </View>
+      
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
@@ -24,6 +31,7 @@ const DetailsScreen = ({navigation, route}) => {
           }}>
           <Image source={item.image} style={{height: 220, width: 220}} />
         </View>
+        
         <View style={style.details}>
           <View
             style={{
@@ -31,24 +39,33 @@ const DetailsScreen = ({navigation, route}) => {
               justifyContent: 'space-between',
               alignItems: 'center',
             }}>
+            
             <Text
-              style={{fontSize: 25, fontWeight: 'bold', color: '#fff'}}>
+              style={{fontSize: 25, fontWeight: 'bold', color: Colors.white}}>
               {item.name}
             </Text>
+            
             <View style={style.iconContainer}>
-              <Icon name="favorite-border" color={'#dcc'} size={25} />
+              <Image source={require('../asset/icons/fav.png')} style={{
+                      width: 28,
+                      height: 28,
+                      tintColor: 'black'
+                }}></Image>
             </View>
           </View>
+          
           <Text style={style.detailsText}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries.
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not
+                only five centuries.
           </Text>
+          
           <View style={{marginTop: 40, marginBottom: 40}}>
             <SecondaryButton title="Add To Cart" />
           </View>
+          
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -66,13 +83,12 @@ const style = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 40,
     paddingBottom: 60,
-    // backgroundColor: Colors.primary,
-    backgroundColor: '#ccc',
+    backgroundColor: Colors.primary,
     borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
   },
   iconContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     height: 50,
     width: 50,
     justifyContent: 'center',
@@ -83,7 +99,7 @@ const style = StyleSheet.create({
     marginTop: 10,
     lineHeight: 22,
     fontSize: 16,
-    color: '#fff',
+    color: Colors.white,
   },
 });
 

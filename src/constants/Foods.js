@@ -1,32 +1,47 @@
 const Foods = [
   {
     id: '1',
-    name: 'Meat Pizza',
-    ingredients: 'Mixed Pizza',
-    price: '8.30',
-    image: require('../assets/meatPizza.png'),
+    name: 'Double Trouble',
+    ingredients: 'Double Cheese And Premium Beef Patty',
+    price: '250',
+    image: require('../assets/DoubleDouble.jpg'),
   },
   {
     id: '2',
-    name: 'Cheese Pizza',
-    ingredients: 'Cheese Pizza',
-    price: '7.10',
-    image: require('../assets/cheesePizza.png'),
+    name: 'Surf n Turf',
+    ingredients: 'Shrimp, Salmon, Juicy Beef',
+    price: '280',
+    image: require('../assets/surf.png'),
   },
   {
     id: '3',
-    name: 'Chicken Burger',
-    ingredients: 'Fried Chicken',
-    price: '5.10',
-    image: require('../assets/chickenBurger.png'),
+    name: 'Angus Beef',
+    ingredients: 'Pure Angus Beef, Lettuce',
+    price: '320',
+    image: require('../assets/AngusBeef.png'),
   },
   {
     id: '4',
-    name: 'Sushi Makizushi',
-    ingredients: 'Salmon Meat',
-    price: '9.55',
-    image: require('../assets/sushiMakizushi.png'),
+    name: 'Cheese Egg',
+    ingredients: 'Sweet And Spicy',
+    price: '200',
+    image: require('../assets/CheeseEggBurger.png'),
   },
+  {
+    id: '5',
+    name: 'Beef n Pork',
+    ingredients: 'Meat Combos',
+    price: '280',
+    image: require('../assets/BeefPorkCutletBurger.png'),
+  },
+  {
+    id: '6',
+    name: 'Barbeque Burger',
+    ingredients: 'Sweet And Spicy',
+    price: '200',
+    image: require('../assets/BbqBurger.png'),
+  },
+
 ];
 
 export default Foods;

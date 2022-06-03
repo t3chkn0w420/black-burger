@@ -21,62 +21,62 @@
 //     //   return null;
 //     // }
 //         return (
-//         <Tab.Navigator  
-//             initialRouteName="Home"
-//             borderRadius="50"
-//                 screenOptions= {{
-//                     headerShown: false,
-//                     tabBarHideOnKeyboard: true,
-//                     tabBarActiveTintColor: '#fff',
-//                     tabBarInactiveTintColor: '#000', 
+        // <Tab.Navigator  
+        //     initialRouteName="Home"
+        //     borderRadius="50"
+        //         screenOptions= {{
+        //             headerShown: false,
+        //             tabBarHideOnKeyboard: true,
+        //             tabBarActiveTintColor: '#fff',
+        //             tabBarInactiveTintColor: '#000', 
                     
-//                     // tabBarOptions:{
-//                     //   tabBarHeight: 70,
-//                     //   tabBarType: 'light',
-//                     //   inactiveTintColor: 'grey',
-//                     //   activeTintColor: '#000000',
-//                     //   tabBarBackgroundColor: '#ffffff',
-//                     // }
-//                   tabBarOptions:{
-//                     tabBarType: 'dark',
-//                     tabBarHeight: 70, 
-//                     tabBarType: 'zoomInOut',
-//                     style: {
-//                         activeBackgroundColor: "#ccc",
-//                         tabBarType: 'zoomInOut',
-//                         zIndex: 8 ,
-//                         borderTopColor: '#666666',
-//                         backgroundColor: 'transparent',
-//                         elevation: 0,
-//                         padding: 10,
-//                         marginTop: 20
-//                   },
-//                 },
-//             headerStyle: {
-//                     height: 80,
-//                     width: 60,
-//                     tabBarActiveTintColor: '#e91'
-//                   },
-//                 tabBarLabelStyle: {
-//                       fontSize: 14,
-//                     //  backgroundColor: '#f43',
-//                     //  borderRadius: 100
-//                   },
-//                   tabBarStyle: {
-//                       backgroundColor: '#000',
-//                       borderTopRightRadius: 60,
-//                       borderTopLeftRadius: 60,
-//                       borderRadius: 20,
-//                       width: 380,
-//                       elevation: 5,
-//                       marginLeft: 7,
-//                       height: 80,
-//                       paddingTop: 15,
-//                       marginBottom: 2,
-//                       // paddingBottom: 55
-//                             }
-//                     }}
-//             >
+        //             // tabBarOptions:{
+        //             //   tabBarHeight: 70,
+        //             //   tabBarType: 'light',
+        //             //   inactiveTintColor: 'grey',
+        //             //   activeTintColor: '#000000',
+        //             //   tabBarBackgroundColor: '#ffffff',
+        //             // }
+        //           tabBarOptions:{
+        //             tabBarType: 'dark',
+        //             tabBarHeight: 70, 
+        //             tabBarType: 'zoomInOut',
+        //             style: {
+        //                 activeBackgroundColor: "#ccc",
+        //                 tabBarType: 'zoomInOut',
+        //                 zIndex: 8 ,
+        //                 borderTopColor: '#666666',
+        //                 backgroundColor: 'transparent',
+        //                 elevation: 0,
+        //                 padding: 10,
+        //                 marginTop: 20
+        //           },
+        //         },
+        //     headerStyle: {
+        //             height: 80,
+        //             width: 60,
+        //             tabBarActiveTintColor: '#e91'
+        //           },
+        //         tabBarLabelStyle: {
+        //               fontSize: 14,
+        //             //  backgroundColor: '#f43',
+        //             //  borderRadius: 100
+        //           },
+        //           tabBarStyle: {
+        //               backgroundColor: '#000',
+        //               borderTopRightRadius: 60,
+        //               borderTopLeftRadius: 60,
+        //               borderRadius: 20,
+        //               width: 380,
+        //               elevation: 5,
+        //               marginLeft: 7,
+        //               height: 80,
+        //               paddingTop: 15,
+        //               marginBottom: 2,
+        //               // paddingBottom: 55
+        //                     }
+        //             }}
+        //     >
 
 //           <Tab.Screen name="Bottom1" component={Bottom1} options={{ tabBarIcon: ({ color, size, focused }) => (
 //               <Image source={require('../assets/icons/cart.png')} style={{

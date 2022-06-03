@@ -23,6 +23,7 @@
     "react-native": "0.68.2",
     "react-native-curved-bottom-bar": "^1.7.9",
     "react-native-gesture-handler": "^2.4.2",
+    "react-native-gorgeous-header": "^1.0.0",
     "react-native-onboarding-swiper": "^1.2.0",
     "react-native-pager-view": "^5.4.24",
     "react-native-paper": "^4.12.1",
