@@ -1,3 +1,23 @@
+## Features
+
+- View Menu Items
+- Search Items
+- Add Items to cart
+- Delete Items from cart
+- Add Items to Favorites
+- Place Order
+- Track Order
+- Cancel Order
+- Sign Up
+- Sign In
+- Reset Password
+- Update Profile Info/Pic
+- Logout
+
+
+
+
+
   shadow: {
     shadowColor: "#808080",
     shadowOffset: {

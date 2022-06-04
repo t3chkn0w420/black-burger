@@ -216,6 +216,8 @@ const style = StyleSheet.create({
     backgroundColor: Colors.light,
     alignItems: 'center',
     paddingHorizontal: 20,
+    borderColor: '#000',
+    borderWidth: 2
   },
   sortBtn: {
     width: 50,
@@ -252,7 +254,7 @@ const style = StyleSheet.create({
   
   card: {
     borderColor: Colors.dark,
-    borderWidth: 3,
+    borderWidth: 2,
     height: 235,
     width: cardWidth,
     marginHorizontal: 10,

@@ -131,7 +131,7 @@ def reactNativeArchitectures() {
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-
+    compile project(':react-native-maps')
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
@@ -261,7 +261,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
