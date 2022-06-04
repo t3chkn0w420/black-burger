@@ -7,7 +7,7 @@ import {View, Image} from 'react-native';
 
 import { Bottom1, Bottom2, Bottom3, Bottom4  } from '../screens/Bottom';
 
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreenn';
 import CartScreen from '../screens/CartScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 

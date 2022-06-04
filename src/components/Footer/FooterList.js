@@ -1,19 +1,21 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { styles } from 'react-native-curved-bottom-bar/src/components/CurvedBottomBar/components/navigator/styles';
 import FooterItem from './FooterItem';
 
 const FooterList = () => {
+   const navigation = useNavigation();
+   const route = useRoute();
+
    return (
       <View style={styles.container}>
-         <FooterItem text="Home" name="Home" />
-         <FooterItem text="Post" name="Post" />
-         <FooterItem text="Links" name="Links" />
-         <FooterItem text="Account" name="Account" />
+         <FooterItem text="Home" name="home-outline" screenName="Home" handlePress={() => navigation.navigate("Home")} routeName={route.name}/>
+         <FooterItem text="Post" name="add-outline" screenName="Post" handlePress={() => navigation.navigate("Post")} routeName={route.name} />
+         <FooterItem text="Links" name="link-outline" screenName="Links" handlePress={() => navigation.navigate("Links")} routeName={route.name}/>
+         <FooterItem text="Account" name="person-circle-outline" screenName="Account" handlePress={() => navigation.navigate("Account")} routeName={route.name}/>
       </View>
    )
 }
-
 
 const styles = StyleSheet.create({
    container: {
@@ -24,4 +26,4 @@ const styles = StyleSheet.create({
    }
 })
 
-export default FooterList();
+export default FooterList;

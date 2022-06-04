@@ -1,18 +1,42 @@
 import React, { useState, useEffect, createContext } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
+// import Navigation from '../components/Navigation/Navigation';
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
    const [ state, setState ] = useState({
-      user: null,
+      // user: null,
+      user: "",
       token: "",
    });
+   
+   // NAVIGATION
+   const token = state && state.token ? state.token : "";
+   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+   
+   // CONFIG AXIOS
+   axios.interceptors.response.use(
+      async function (response) {
+         return response;
+      },
+      async function (error) {
+         let res = error.response;
+            if (res.status === 401 && res.config && !res.config.__isRetryRequest) {
+               await AsyncStorage.removeItem("auth-rn");
+                  // setState({ user: null, token: "" });
+                  setState({ user: "", token: "" });
+                     navigation.navigate("Register");
+            }
+      }
+   );
    
    useEffect(() => {
       const loadFromAsyncStorage = async () => {
          let data = await AsyncStorage.getItem("auth-rn");
-         const parsed = JSON.parse(data);
+         const parsed = JSON.parsed(data);
          setState({ ...state, user: parsed.user, token: parsed.token });
       };
        loadFromAsyncStorage();

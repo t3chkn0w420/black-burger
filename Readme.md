@@ -11,6 +11,8 @@
 - Sign Up
 - Sign In
 - Reset Password
+- Phone Login
+- Verify Otp
 - Update Profile Info/Pic
 - Logout
 

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+
+import React, { useState, useContext } from 'react';
 import { StyleSheet, Image, Text, View, TextInput } from 'react-native';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { setGestureState } from 'react-native-reanimated/lib/reanimated2/NativeMethods';
+import { AuthContext } from '../context/auth';
 
 const Login = ({ navigation }) => {
-   const [email, setEmail] = useState(" ");
-   const [password, setPassword] = useState(" ");
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+   const [state, setState] = useContext(AuthContext);
    
    const registerUser = async () => {
       if ( email === '' || password === '') {
@@ -17,15 +19,15 @@ const Login = ({ navigation }) => {
             return;
       }
       
-     const resp = await axios.post("http://localhost:4200/api/auth/signin", { email, password });
+     const resp = await axios.post("http://192.168.1.9:4200/api/auth/signin", { email, password });
          if (resp.data.error)
             alert(resp.data.error)
             
       else {
-         setGestureState(resp.data);
+         setState(resp.data);
          await AsyncStorage.setItem("auth-rn", JSON.stringify(resp.data));
             alert("Login Successfull");
-            navigation.navigate("Home")
+               navigation.navigate("Home")
       }
    };
 
@@ -36,15 +38,20 @@ const Login = ({ navigation }) => {
                <View stle={styles.imageContainer}>
                    <Image source={require("../asset/images/logo.png")} style={styles.imageStyles} />
                </View>
+               
+               <Text
+                     style={{ color: 'darkred', fontWeight: 'bold', fontSize: 15, textAlign: 'center' }}
+                       onPress={() => navigation.navigate("Home")}>   
+                            Go to HOME! 
+                  </Text>
          
                <View style={{ marginHorizontal: 24 }}>
-                  <Text style={{ fontSize: 16, color: '#8e93a1'}}> Email  </Text>
-                     <TextInput style={styles.logInput} value={email} onChangeText={text => setEmail(text)} autoComplete="email" keyboardType='email-address' />
+                     <TextInput style={styles.logInput} value={email} onChangeText={text => setEmail(text)} keyboardType='email-address' placeholder='Email Address'/>
                </View>
                
                <View style={{ marginHorizontal: 24 }}>
-                  <Text style={{ fontSize: 16, color: '#8e93a1'}}> Password </Text>
-                     <TextInput style={styles.logInput} value={password} onChangeText={text => setPassword(text)} secureTextEntry autoCompleteType="password" />
+                  {/* <Text style={{ fontSize: 16, color: '#8e93a1'}}> Password </Text> */}
+                     <TextInput style={styles.logInput} value={password} onChangeText={text => setPassword(text)} secureTextEntry placeholder='Password' />
                </View>
                
                   <View>
@@ -55,19 +62,21 @@ const Login = ({ navigation }) => {
                         onPress={registerUser}
                         style={styles.buttonStyle}
                      >
-                           <Text>
+                     
+                        {/* <Ionicons name={log-in-outline} size={25} /> */}
+                           <Text style={{ color: '#fff', fontsize: 18, fontWeight: 'bold' }}>
                               LOGIN
                            </Text>
                      </TouchableOpacity>
                   </View>
                   
                   <Text
-                     style={{ color: 'darkred', fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}
+                     style={{ color: 'darkred', fontWeight: 'bold', fontSize: 15, textAlign: 'center' }}
                        onPress={() => navigation.navigate("Register")}>   
                             Dont't Have an Account Yet? 
                   </Text>
          
-                  <Text style={{ marginHorizontal: 24}}> {JSON.stringify({ email, password })} </Text>
+                  {/* <Text style={{ marginHorizontal: 24}}> {JSON.stringify({ email, password })} </Text> */}
                
          </View>
       </KeyboardAwareScrollView>
@@ -87,12 +96,14 @@ const styles = StyleSheet.create({
    logInput: {
       borderBottomWidth: .5,
       height: 48,
+      borderRadius: 5,
+      backgroundColor: '#ccc',
       borderBottomColor: "#8e93a1",
       marginBottom:  30
    },
    buttonStyle: {
       textAlign: 'center',
-      backgroundColor: "darkmagenta",
+      backgroundColor: "#000",
       height: 50,
       width: '50%',
       marginBottom: 20,
